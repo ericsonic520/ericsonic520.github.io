@@ -1,19 +1,16 @@
-$color-main: #4fc08d;
-
-$font-family: 'Source Sans Pro', sans-serif;
-
-*, *:before, *:after {
+    *, *:before, *:after {
   box-sizing: border-box;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga", "kern";
+  -webkit-font-feature-settings: "liga", "kern";
+          font-feature-settings: "liga", "kern";
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
-  background: linear-gradient(210deg, lighten($color-main, 20%), $color-main);
+  background: linear-gradient(210deg, #9adbbe, #4fc08d);
 }
 
 body {
@@ -22,7 +19,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: $font-family;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 button {
@@ -32,12 +29,12 @@ button {
   font-size: inherit;
   font-family: inherit;
   font-weight: inherit;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    cursor: pointer;
-  }
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
 }
 
 .app {
@@ -49,7 +46,7 @@ button {
   border-radius: 1em;
   background: #fff;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(25,25,25,.25);
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25);
 }
 
 .btn {
@@ -59,43 +56,24 @@ button {
   padding: 0.75em 1.5em;
   cursor: pointer;
   background: none;
-  color: darken($color-main, 20%);
+  color: #2d7c58;
   border: 1px solid;
   letter-spacing: 1px;
-  font-family: $font-family;
+  font-family: "Source Sans Pro", sans-serif;
   color: #4fc08d;
-  border: $color-main 1px solid;
+  border: #4fc08d 1px solid;
   transition: 250ms ease-out;
-  &:hover, &:focus {
-    color: #fff;
-    background: $color-main;
-  }
+}
+.btn:hover, .btn:focus {
+  color: #fff;
+  background: #4fc08d;
 }
 
 .form {
   width: 100%;
   padding: 1.5rem 1rem 0 1rem;
   display: flex;
-  &__input {
-    width: 100%;
-    font-size: 14px;
-    margin: 0 .5em;
-    border-radius: 2em;
-    padding: 0.75em 1.5em;
-    background: none;
-    font-family: $font-family;
-    border: #e3e3e3 1px solid;
-    transition: border 250ms ease-out;
-    &:focus {
-      border: $color-main 1px solid;
-      outline: none;
-    }
-  }
-  &__input,
-  &__submit-btn {
-  }
 }
-
 .form__input {
   width: 100%;
   font-size: 14px;
@@ -182,11 +160,13 @@ button {
 
 .list-move,
 .list-leave-active,
-.list-enter-active, {
-  transition: 500ms cubic-bezier(.87,-.41,.19,1.44);
+.list-enter-active {
+  transition: 500ms cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
+
 .list-enter,
 .list-leave-active {
-  transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
   opacity: 0;
 }

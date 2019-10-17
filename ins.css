@@ -113,66 +113,29 @@ button {
 }
 
 .todo-list {
-  $block: #{&};
   width: 100%;
   padding: 0 1rem;
   flex: 1;
-  &__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5em;
-    margin-bottom: .5em;
-    border-radius: 3px;
-    transition: 200ms;
-    color: $color-main;
-    &:last-child { margin-bottom: 0; }
-    &.complete { 
-      color: lightgreen;
-      #{$block}__item-content {
-        &:after {
-          background: lightgreen;
-        }
-      }
-    }
-  }
-  &__item-content {
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: $color-main;
-      transition: 250ms ease-out;
-      transform-origin: center;
-      transform: scalex(0);
-    }
-    &:hover, &:focus {
-      &:after {
-        transform: scalex(1);
-      }
-    }
-  }
-  &__item-remove {
-    margin-left: .5em;
-    background: none;
-    border: 1px solid;
-    color: inherit;
-    padding: 0;
-    line-height: 1;
-    width: 2em; 
-    height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 80%;
-  }
 }
-
+.todo-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em;
+  margin-bottom: .5em;
+  border-radius: 3px;
+  transition: 200ms;
+  color: #4fc08d;
+}
+.todo-list__item:last-child {
+  margin-bottom: 0;
+}
+.todo-list__item.complete {
+  color: lightgreen;
+}
+.todo-list__item.complete .todo-list__item-content:after {
+  background: lightgreen;
+}
 .todo-list__item-content {
   position: relative;
 }
@@ -193,6 +156,21 @@ button {
 .todo-list__item-content:hover:after, .todo-list__item-content:focus:after {
   -webkit-transform: scalex(1);
           transform: scalex(1);
+}
+.todo-list__item-remove {
+  margin-left: .5em;
+  background: none;
+  border: 1px solid;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 80%;
 }
 
 .filters {

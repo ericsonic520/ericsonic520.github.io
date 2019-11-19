@@ -1,7 +1,7 @@
-[
+
     { id: 1, text: "Eric" },
     { id: 2, text: "Tina"},
     { id: 3, text: "Shary" },
     { id: 4, text: "Mary" },
     { id: 5, text: "Sali" }
-]
+

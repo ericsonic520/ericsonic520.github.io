@@ -22,18 +22,18 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-        alert(profile.getName());
-          $("#aa").append("<div>123</div>");
-        location.href = 'https://ericsonic520.github.io?name='+profile.getName();
+//         alert(profile.getName());
+//           $("#aa").append("<div>123</div>");
+//         location.href = 'https://ericsonic520.github.io?name='+profile.getName();
       }
       
-//       $(document).ready(function(){
-//       $("#bbb").click(function(){
-//          alert(profile.getName());
-//          $("#aa").append("<div>123</div>");
-//         location.href = "https://ericsonic520.github.io?name=profile.getName()";
-//       });
-//    });
+      $(document).ready(function(){
+          $("#bbb").click(function(){
+             alert(profile.getName());
+             $("#aa").append("<div>123</div>");
+            location.href = "https://ericsonic520.github.io?name=profile.getName()";
+          });
+       });
     </script>
   </body>
 </html>
